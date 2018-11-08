@@ -8,5 +8,6 @@ public class Ch2_29 {
                 Observable.just("Alpha", "Beta", "Gamma");
         source.first("Nil") //returns a Single
                 .subscribe(System.out::println);
+
     }
 }

@@ -18,7 +18,7 @@ public class Ch2_18 {
         sleep(5000);
     }
 
-    public static void sleep(int millis) {
+    private static void sleep(int millis) {
         try {
             Thread.sleep(millis);
         } catch (InterruptedException e) {

@@ -3,12 +3,13 @@ package ch2;
 import io.reactivex.Observable;
 
 public class Ch2_24 {
-    private static int start = 1;
-    private static int count = 5;
+    private static int start = -20;
+    private static int count = 6;
 
     public static void main(String[] args) {
+        //从start开始,连续发送count个，没有时间间隔
         Observable<Integer> source = Observable.range(start, count);
-        source.subscribe(i -> System.out.println("Observer 1: " + i));
+        source.subscribe(i -> System.out.println("Observer 1: " + i + 222));
 //modify count
         count = 10;
         source.subscribe(i -> System.out.println("Observer 2: " + i));
