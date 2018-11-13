@@ -1,9 +1,9 @@
 package ch3;
 
-import io.reactivex.Observable;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+
+import io.reactivex.Observable;
 
 public class Ch3_12 {
     public static void main(String[] args) {
@@ -12,4 +12,6 @@ public class Ch3_12 {
                 .map(s -> LocalDate.parse(s, dtf))
                 .subscribe(i -> System.out.println("RECEIVED: " + i));
     }
+
+
 }

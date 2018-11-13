@@ -1,8 +1,10 @@
 package ch3;
 
+import java.util.concurrent.TimeUnit;
+
 import io.reactivex.Observable;
 
-import java.util.concurrent.TimeUnit;
+import static java.util.Comparator.reverseOrder;
 
 public class Ch3_20 {
     public static void main(String[] args) {
@@ -10,7 +12,10 @@ public class Ch3_20 {
                 "Epsilon")
                 //延迟3秒发送
                 .delay(3, TimeUnit.SECONDS)
+                //String 逆序
+                .sorted(reverseOrder())
                 .subscribe(s -> System.out.println("Received: " + s));
+        //5秒后结束运行
         sleep(5000);
     }
 

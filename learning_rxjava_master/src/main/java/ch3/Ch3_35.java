@@ -7,6 +7,7 @@ public class Ch3_35 {
         Observable.just("Alpha", "Beta", "Gamma", "Delta",
                 "Epsilon")
                 .toMap(s -> s.charAt(0), String::length)
+
                 .subscribe(s -> System.out.println("Received: " + s));
     }
 }

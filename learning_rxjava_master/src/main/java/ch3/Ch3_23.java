@@ -7,7 +7,7 @@ public class Ch3_23 {
         Observable.just("Alpha", "Beta", "Gamma", "Delta",
                 "Epsilon")
                 //初始值
-                //TODO  ???
+                //0：初始值
                 .scan(0, (total, next) -> total + 1)
                 .subscribe(s -> System.out.println("Received: " + s));
     }
