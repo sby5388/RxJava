@@ -1,5 +1,8 @@
 package ch3;
 
+import java.util.Collection;
+import java.util.concurrent.Callable;
+
 import io.reactivex.Observable;
 
 public class Ch3_34 {

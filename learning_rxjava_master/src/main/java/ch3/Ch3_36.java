@@ -1,8 +1,8 @@
 package ch3;
 
-import io.reactivex.Observable;
-
 import java.util.concurrent.ConcurrentHashMap;
+
+import io.reactivex.Observable;
 
 public class Ch3_36 {
     public static void main(String[] args) {
