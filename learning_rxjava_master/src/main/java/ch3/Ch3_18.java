@@ -7,7 +7,7 @@ import java.util.Comparator;
 public class Ch3_18 {
     public static void main(String[] args) {
         Observable.just(6, 2, 5, 7, 1, 4, 9, 8, 3)
-                //逆序
+                //排序：按逆序的顺序
                 .sorted(Comparator.reverseOrder())
                 .subscribe(System.out::println);
     }

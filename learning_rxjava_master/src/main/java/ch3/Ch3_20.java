@@ -10,6 +10,7 @@ public class Ch3_20 {
     public static void main(String[] args) {
         Observable.just("Alpha", "Beta", "Gamma", "Delta",
                 "Epsilon")
+//                todo 如何实现每一个都按延迟3秒后才发送呢
                 //延迟3秒发送
                 .delay(3, TimeUnit.SECONDS)
                 //String 逆序

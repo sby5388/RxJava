@@ -10,6 +10,7 @@ public class Ch4_6 {
                         "283242/4542/WHISKEY/2348562");
         source.flatMap(s -> Observable.fromArray(s.split("/")))
                 //use regex to filter integers
+                //使用正则表达式，来过滤
                 .filter(s -> s.matches("[0-9]+"))
                 .map(Integer::valueOf)
                 .subscribe(System.out::println);

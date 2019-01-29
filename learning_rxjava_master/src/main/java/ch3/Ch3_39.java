@@ -8,6 +8,7 @@ public class Ch3_39 {
     public static void main(String[] args) {
         Observable.just("Alpha", "Beta", "Gamma", "Delta",
                 "Epsilon")
+                //TODO 没看明白
                 .collect(HashSet::new, HashSet::add)
                 .subscribe(s -> System.out.println("Received: " + s));
     }

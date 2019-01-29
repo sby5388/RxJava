@@ -11,16 +11,19 @@ public class Ch4_11_1 {
                         "Epsilon");
         //一个发布者 变成多个 发布者？
 
-        source.concatMap(new Function<String, ObservableSource<?>>() {
+        Observable<String> concatMap =
+                source.concatMap(new Function<String, ObservableSource<String>>() {
             @Override
             public ObservableSource<String> apply(String s) throws Exception {
                 return Observable.fromArray(s.split(""));
             }
         });
-        source.concatMap(s -> {
-            System.out.println("-----");
-            return Observable.fromArray(s.split(""));
-        })
-                .subscribe(System.out::println);
+        concatMap.subscribe(System.out::println);
+
+//        source.concatMap(s -> {
+//            // System.out.println("-----");
+//            return Observable.fromArray(s.split(""));
+//        })
+//                .subscribe(System.out::println);
     }
 }

@@ -13,7 +13,7 @@ public class Ch3_41_1 {
                         return 10 / integer;
                     }
                 })
-                //发生错误时后续的不再发送
+                //发生错误时后续的不再接收，处理
                 .subscribe(new Consumer<Integer>() {
                                @Override
                                public void accept(Integer integer) {

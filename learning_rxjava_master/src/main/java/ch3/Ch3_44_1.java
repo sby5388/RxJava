@@ -9,6 +9,7 @@ public class Ch3_44_1 {
                 .map(new Function<Integer, Integer>() {
                     @Override
                     public Integer apply(Integer integer) {
+                        //内部对异常做了处理
                         //TODO  由数据源对异常进行了处理，发送给接收者的是-1，并不是异常标志，
                         //发送不会终止
                         try {

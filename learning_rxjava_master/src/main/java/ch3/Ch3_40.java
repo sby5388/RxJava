@@ -7,7 +7,7 @@ public class Ch3_40 {
     public static void main(String[] args) {
         Observable.just("Alpha", "Beta", "Gamma", "Delta",
                 "Epsilon")
-                //TODO ????
+                //TODO ???? 没看明白
                 .collect(ImmutableList::builder,
                         ImmutableList.Builder::add)
                 .map(ImmutableList.Builder::build)

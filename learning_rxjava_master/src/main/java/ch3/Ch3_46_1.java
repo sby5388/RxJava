@@ -12,6 +12,7 @@ public class Ch3_46_1 {
                 .onErrorResumeNext(new Function<Throwable, ObservableSource<Integer>>() {
                     @Override
                     public ObservableSource<Integer> apply(Throwable throwable)  {
+                        //TODO  可以根据异常的类型，有不同的返回值
                         return Observable.empty();
                     }
                 })
