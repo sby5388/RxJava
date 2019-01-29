@@ -1,8 +1,8 @@
 package ch3;
 
-import io.reactivex.Observable;
-
 import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Observable;
 
 public class Ch3_3 {
     public static void main(String[] args) {
@@ -13,6 +13,7 @@ public class Ch3_3 {
                 //处理发送的数据
                 .subscribe(i -> System.out.println("RECEIVED: " + i));
         //程序运行五秒后结束，保证上面的三秒持续时间能够完成发送任务
+        //如果没有这个生存期停留时间，程序马上就运行结束，不会看到任何结果
         sleep(5000);
     }
 

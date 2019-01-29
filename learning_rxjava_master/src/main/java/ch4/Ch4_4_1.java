@@ -1,30 +1,30 @@
 package ch4;
 
-import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 
-public class Ch4_12 {
+public class Ch4_4_1 {
     public static void main(String[] args) {
-//emit every second
+        //emit every second 每一秒发一次
         Observable<String> source1 =
+                //interval 一定时间，发送数据，从0开始
                 Observable.interval(1, TimeUnit.SECONDS)
-                        .take(2)
-                        .map(l -> l + 1) // emit elapsed seconds
+                        // emit elapsed seconds
+                        .map(l -> l + 1)
                         .map(l -> "Source1: " + l + " seconds");
-//emit every 300 milliseconds
+        //emit every 300 milliseconds 每300毫秒 发送一次
         Observable<String> source2 =
                 Observable.interval(300, TimeUnit.MILLISECONDS)
-                        .map(l -> (l + 1) * 300) // emit elapsed milliseconds
+                        // emit elapsed milliseconds
+                        .map(l -> (l + 1) * 300)
                         .map(l -> "Source2: " + l + " milliseconds");
-//emit Observable that emits first
-        //只会发送第一个最先发送数据的数据源
-        Observable.amb(Arrays.asList(source1, source2))
-                .subscribe(i -> System.out.println("RECEIVED: " +
-                        i));
-//keep application alive for 5 seconds
-        sleep(5000);
+        //merge and subscribe
+        Observable.merge(source1, source2)
+                .subscribe(System.out::println);
+        //keep alive for 3 seconds
+        //
+        sleep(3000);
     }
 
     public static void sleep(long millis) {

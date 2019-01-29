@@ -8,6 +8,7 @@ public class Ch4_19 {
         Observable<String> source =
                 Observable.just("Alpha", "Beta", "Gamma", "Delta",
                         "Epsilon");
+        //分组
         Observable<GroupedObservable<Integer, String>> byLengths =
                 source.groupBy(s -> s.length());
         byLengths.flatMapSingle(grp ->

@@ -14,8 +14,7 @@ public class Ch2_5 {
         source.map(String::length)
                 .filter(i -> i >= 5)
                 .subscribe(s -> System.out.println("RECEIVED: " + s));
-        source
-                .map(new Function<String, Integer>() {
+        source.map(new Function<String, Integer>() {
                     @Override
                     public Integer apply(String s) throws Exception {
                         return s.length();

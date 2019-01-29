@@ -1,10 +1,10 @@
 package ch2;
 
+import java.util.concurrent.TimeUnit;
+
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.observers.ResourceObserver;
-
-import java.util.concurrent.TimeUnit;
 
 public class Ch2_34 {
     public static void main(String[] args) {
@@ -27,7 +27,10 @@ public class Ch2_34 {
                         System.out.println("Done!");
                     }
                 };
+
 //capture Disposable
+        //
         Disposable disposable = source.subscribeWith(myObserver);
+        source.subscribe(myObserver);
     }
 }

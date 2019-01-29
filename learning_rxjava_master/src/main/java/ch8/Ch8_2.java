@@ -7,6 +7,7 @@ public class Ch8_2 {
     public static void main(String[] args) {
         Observable.range(1, 999_999_999)
                 .map(MyItem::new)
+                //一次性创建这个多个，只是接收者每隔0.05秒才接收一个
                 .observeOn(Schedulers.io())
                 .subscribe(myItem -> {
                     sleep(50);

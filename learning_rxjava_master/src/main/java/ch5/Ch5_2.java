@@ -6,7 +6,9 @@ import io.reactivex.observables.ConnectableObservable;
 public class Ch5_2 {
     public static void main(String[] args) {
         ConnectableObservable<Integer> threeIntegers =
-                Observable.range(1, 3).publish();
+                Observable.range(1, 3)
+                        .publish();
+//        TODO  publish  同 connect 配合使用 ：ConnectableObservable
         threeIntegers.subscribe(i -> System.out.println("Observer One:" + i));
         threeIntegers.subscribe(i -> System.out.println("Observer Two:" + i));
         threeIntegers.connect();

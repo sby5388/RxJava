@@ -1,8 +1,11 @@
 package ch4;
 
+import java.util.Arrays;
+import java.util.List;
+
 import io.reactivex.Observable;
 
-public class Ch4_2 {
+public class Ch4_3_1 {
     public static void main(String[] args) {
         Observable<String> source1 =
                 Observable.just("Alpha", "Beta");
@@ -14,9 +17,11 @@ public class Ch4_2 {
                 Observable.just("Eta", "Theta");
         Observable<String> source5 =
                 Observable.just("Iota", "Kappa");
-        //可变参数
-        Observable.mergeArray(source1, source2, source3, source4,
-                source5)
+        List<Observable<String>> sources =
+                Arrays.asList(source1, source2, source3, source4,
+                        source5);
+        //集合中拿到发布者
+        Observable.merge(sources)
                 .subscribe(i -> System.out.println("RECEIVED: " + i));
     }
 }

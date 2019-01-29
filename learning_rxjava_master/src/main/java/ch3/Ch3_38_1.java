@@ -15,13 +15,13 @@ public class Ch3_38_1 {
                 //TODO 可以用来做分类！
                 .toMultimap(new Function<String, Integer>() {
                     @Override
-                    public Integer apply(String s) throws Exception {
+                    public Integer apply(String s) {
                         return s.length();
                     }
                 })
                 .subscribe(new Consumer<Map<Integer, Collection<String>>>() {
                     @Override
-                    public void accept(Map<Integer, Collection<String>> s) throws Exception {
+                    public void accept(Map<Integer, Collection<String>> s) {
                         System.out.println("Received: " + s);
                     }
                 });

@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 public class Ch1_3 {
     public static void main(String[] args) {
 //        Interval每隔一定时间发射一个整数，从0开始
-        Observable<Long> secondIntervals = Observable.interval(1, TimeUnit.SECONDS);
+        Observable<Long> secondIntervals = Observable.interval(500, TimeUnit.MILLISECONDS);
         secondIntervals.subscribe(new Consumer<Long>() {
             @Override
             public void accept(Long aLong) throws Exception {
@@ -17,9 +17,9 @@ public class Ch1_3 {
         });
         /* Hold main thread for 5 secondsso Observable above has chance to fire */
         /**
-         * 保持主线程5秒，因此可观察到以上机会发射
+         * todo 保持主线程5秒，因此才有机会观察到以上数据发射
          */
-        sleep(5000);
+        sleep(500000);
     }
 
     public static void sleep(long millis) {

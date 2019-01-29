@@ -7,6 +7,7 @@ public class Ch3_53 {
         Observable.just("Alpha", "Beta", "Gamma", "Delta",
                 "Epsilon")
                 .doOnSubscribe(d -> System.out.println("Subscribing!"))
+                //todo ???
                 .doOnDispose(() -> System.out.println("Disposing!"))
                 .subscribe(i -> System.out.println("RECEIVED: " + i));
     }
