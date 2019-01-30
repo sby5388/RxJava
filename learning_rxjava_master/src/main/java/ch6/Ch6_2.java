@@ -1,8 +1,8 @@
 package ch6;
 
-import io.reactivex.Observable;
-
 import java.util.concurrent.ThreadLocalRandom;
+
+import io.reactivex.Observable;
 
 public class Ch6_2 {
     public static void main(String[] args) {
@@ -16,7 +16,9 @@ public class Ch6_2 {
     }
 
     public static <T> T intenseCalculation(T value) {
-        sleep(ThreadLocalRandom.current().nextInt(3000));
+        int sleepTime = ThreadLocalRandom.current().nextInt(2000);
+        System.out.println("睡眠时间 : " + sleepTime);
+        sleep(sleepTime);
         return value;
     }
 

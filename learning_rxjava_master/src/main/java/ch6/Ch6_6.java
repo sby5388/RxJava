@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Ch6_6 {
     public static void main(String[] args) {
         Observable.just("Alpha", "Beta", "Gamma", "Delta",
-                "Epsilon")
+                "Epsilon",20)
                 .subscribeOn(Schedulers.computation())
                 .map(Ch6_6::intenseCalculation)
                 .blockingSubscribe(System.out::println,

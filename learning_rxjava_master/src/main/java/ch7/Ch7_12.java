@@ -21,6 +21,7 @@ public class Ch7_12 {
                 .map(i -> (i + 1) * 2000) // map to elapsed time
                 .map(i -> "SOURCE 3: " + i)
                 .take(2);
+        //concat:类似于String.contact ,拼装，将几个发布者合成一个发布者
         Observable.concat(source1, source2, source3)
                 .subscribe(System.out::println);
         sleep(6000);

@@ -13,6 +13,7 @@ public class Ch6_3 {
                 .map(s -> intenseCalculation((s)))
                 .subscribe(System.out::println);
         Observable.range(1, 6)
+                //TODO 指定发布者所在的线程
                 .subscribeOn(Schedulers.computation())
                 .map(s -> intenseCalculation((s)))
                 .subscribe(System.out::println);

@@ -7,6 +7,7 @@ public class Ch5_19 {
         Observable<Integer> cachedRollingTotals =
                 Observable.just(6, 2, 5, 7, 1, 4, 9, 8, 3)
                         .scan(0, (total, next) -> total + next)
+                        //缓存？
                         .cache();
         cachedRollingTotals.subscribe(System.out::println);
     }

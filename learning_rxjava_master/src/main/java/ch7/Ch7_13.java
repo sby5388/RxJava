@@ -22,6 +22,7 @@ public class Ch7_13 {
                 .map(i -> "SOURCE 3: " + i)
                 .take(2);
         Observable.concat(source1, source2, source3)
+                //
                 .throttleWithTimeout(1, TimeUnit.SECONDS)
                 .subscribe(System.out::println);
         sleep(6000);

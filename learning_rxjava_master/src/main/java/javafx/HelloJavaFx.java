@@ -34,7 +34,7 @@ public class HelloJavaFx extends Application {
             public void handle(ActionEvent event) {
                 count++;
                 btn.setText("点击" + count);
-                System.exit(0);
+                //System.exit(0);
             }
         });
         ObservableList<String> strList = FXCollections.observableArrayList("红色", "黄色", "绿色");
